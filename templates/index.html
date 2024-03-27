@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Bio-Info</a>
+    </nav>
+    <div class="container border" style="margin-top: 25px; padding: 50px;">
+       <div class="text-center" stye="margin-top: -60px;">
+            <h1>List of chains</h1>
+       </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Chain_ID</th>
+                    <th scope="col">Chain_Name</th>
+                    <th scope="col">Eq_Class</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for value in result %}
+                    <tr>
+                        <td scope="row">{{value.chain_id}}</td>
+                        <td scope="row">{{value.chain_name}}</td>
+                        <td scope="row">{{value.eq_class}}</td>
+                        <td scope="row">
+                            <a href="/chain/id/{{value.chain_id}}">View chain</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
